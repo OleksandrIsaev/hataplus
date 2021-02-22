@@ -94,31 +94,32 @@
                 </div>
                 <div class="borderlast">
                     <div class="maps">
-                        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1Kg7QpJUKMR_Yj6CD93NZW4wsb9GA6vv1"
-                            width="466" height="300"></iframe>
+                        <iframe  src="https://www.google.com/maps/d/u/0/embed?mid=1Kg7QpJUKMR_Yj6CD93NZW4wsb9GA6vv1"
+                        width="466" height="300"></iframe>
                     </div>
                     <div class="send">
                         <h3>Форма зворотнього зв’язку</h3>
                         <div class="forma">
-                            <label class="form1">
-                                <input class="cont" type="text" placeholder="Ваше ім’я">
-                            </label>
-                            <label class="form2">
-                                <input class="cont" type="phone" placeholder="Телефон">
-                            </label>
-                            <label>
-                                <input class="theme" type="text" placeholder="Тема повідомлення">
-                            </label>
-                            <label>
-                                <textarea class="text" rows="3" cols="30" maxlength="100"
-                                    placeholder="Текст"></textarea>
-                            </label>
-                            <label class="registration">
-                                <input type="submit" value="Відправити">
-                            </label>
-                            <label class="last">
-                                <input type="checkbox">Я бажаю отримувати останні новини
-                            </label>
+                            <form method="POST" action="sendmail.php">
+                                <label class="form1">
+                                    <input class="cont" name="name" type="text" placeholder="Ваше ім’я">
+                                </label>
+                                <label class="form2">
+                                    <input class="cont" name="phone" type="phone" placeholder="Телефон">
+                                </label>
+                                <label>
+                                    <input type="email" class="theme" placeholder="E-mail">
+                                </label>
+                                <label>
+                                    <textarea name="message" class="text" rows="3" cols="30" maxlength="100" placeholder="Текст"></textarea>
+                                </label>
+                                <label class="registration">
+                                    <input type="submit" value="Відправити">
+                                </label>
+                                <label class="last">
+                                    <input type="checkbox">Я бажаю отримувати останні новини
+                                </label>
+                            </form>
                         </div>
                     </div>
                 </div>
