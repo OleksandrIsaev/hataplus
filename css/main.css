@@ -25,6 +25,10 @@ sup{
     margin: 0 auto;
     max-width: 960px ;
 }
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
 .row{
     margin: 0 -14px;
     font-size: 0;
@@ -134,7 +138,10 @@ sup{
     width: 18px;
     height: 19px;
     left: -30px;
-    background: url(../img/sprites.png) no-repeat -62px 0;
+    background: url(../img/phoneorange.png) no-repeat -62px 0;
+    display: inline-block;
+    animation: funny-bg 3s linear infinite,
+    bounce 1s ease-in-out infinite;
 }
 .mail::before{
     content: "";
@@ -187,6 +194,7 @@ sup{
     text-align: right;
 }
 .button_call a{
+    display: inline-block;
     padding: 16px 30px;
     text-decoration: none;
     font: bold 16px Arial;
@@ -196,8 +204,20 @@ sup{
     border: 2px solid #fd8300;
 }
 .button_call a:hover{
+    display: inline-block;
+    padding: 16px 30px;
     color: #fff;
     background-color: #fd8300;
+    background-image: linear-gradient(45deg, orangered 0%, brown, gold, brown, orangered 100%);
+    background-size: 1000%;
+    border-radius: 25px;
+    transition: padding 1s ease,
+                border-top-color .2s linear,
+                border-right-color .2s linear .2s,
+                border-bottom-color .2s linear .4s,
+                border-left-color .2s linear .6s;
+    animation: funny-bg 3s linear alternate infinite,
+    bounce;
 }
 .info-mail :hover{
     text-decoration: underline;
@@ -645,9 +665,97 @@ iframe{
   #checkbox:checked~.block{
     display: none;
   }
-@media{
-    
+  @media screen and (max-width: 720px){
+    .header{
+      flex-direction: column;
+      text-align: center;
+      align-items: flex-s tart;
+    }
+    .main-menu{
+        position: absolute;
+        display: none;
+        width: 210px;
+        z-index: 1;
+    }
+    .main-menu .a {
+        font: bold 15px Arial;
+        color: #2a3644;
+    }
+    .burger ul{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        background-color: grey;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all .5s ease;
+    }
+    .burger ul{
+        transform: translateX(50px);
+    }
+    .burger{
+        transform: translateX(-50px);
+    }
+    .burger{
+        height: 25px;
+    }
+    .burger,
+    .burger,
+    .burger{
+        content: "";
+        position: absolute;
+        height: 5px;
+        background-color: #fff;
+        border-radius: 3px;
+        transition: all .5s cubic-bezier(.19,-0.62,.78,1.53);
+    }
+    .main-menu span{
+        width: 80%;
+        top: 13px;
+        transition-delay: .5s;
+    }
+    .main-menu span:before{
+        width: 100%;
+        top: 10px;
+    }
+    .main-menu span:after{
+        width: 100%;
+        top: 20px;
+        transition-delay: .25s;
+    }
 }
+  @media screen and (max-width: 370px){
+    .logo{
+      flex-direction: column;
+      text-align: center;
+    }
+    .logo img{
+      margin: 10px 0 20px;
+    }
+  }
+  @keyframes funny-bg{
+    from{
+      background-position: 0 0;
+    }
+    to{
+      background-position: 100%;
+    }
+  }
+  @keyframes bounce{
+    0%{
+      transform: translateX(10px);
+    }
+    90%{
+        transform: translateX(1px);
+    }
+    100%{
+      transform: translateX(9px);
+    }
+  }
+  
 
 
 
