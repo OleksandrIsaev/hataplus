@@ -63,8 +63,6 @@ sup{
 .checkbox{
     position: absolute;
     visibility: hidden;
-    width: 30px;
-    height: 30px;
     left: 10px;
     top: -7px;
 }
@@ -79,10 +77,14 @@ sup{
 .checkbox {
     position: absolute;
     visibility: hidden;
-    width: 30px;
-    height: 30px;
     left: 10px;
     top: -7px;
+}
+.main-menu label{
+    display: flex;
+    position: relative;
+    width: 40px;
+    height: 0px;
 }
 .checkbox+label::before {
     content: "";
@@ -93,7 +95,6 @@ sup{
     visibility: visible;
     left: 0;
 }
-
 .burger-visible {
     visibility: hidden;
     display: block;
@@ -747,6 +748,9 @@ iframe{
         .menu-box {
             display: none;
             visibility: hidden;
+        }
+        .row{
+            text-align: center;
         }
         .burger {
             display: block;
