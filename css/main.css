@@ -60,11 +60,76 @@ sup{
     text-decoration: none;
     color: #b1b1d2;
 }
-.main-menu{
-    float: left;
+.checkbox{
+    position: absolute;
+    visibility: hidden;
+    width: 30px;
+    height: 30px;
+    left: 10px;
+    top: -7px;
 }
-.main-menu li{
+.burger {
+    display: none;
+    width: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 10px;
+}
+.checkbox {
+    position: absolute;
+    visibility: hidden;
+    width: 30px;
+    height: 30px;
+    left: 10px;
+    top: -7px;
+}
+.checkbox+label::before {
+    content: "";
+    position: absolute;
+}
+.checkbox:checked~.menu-box {
+    display: block;
+    visibility: visible;
+    left: 0;
+}
+
+.burger-visible {
+    visibility: hidden;
+    display: block;
+    width: 30px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: absolute;
+}
+.burger-visible:first-child {
+    top: 0;
+    left: 10px;
+}
+.burger-visible:nth-child(2) {
+    top: 10px;
+    left: 10px;
+}
+.burger-visible:last-child {
+    left: 10px;
+    top: 20px;
+}
+.bottom-line {
+    padding: 30px 0;
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.1));
+    background-color: #fff;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+.main-menu li {
     margin-right: 30px;
+}
+.main-menu a:hover {
+    color: #fd8300;
+    transition: all .4s ease;
 }
 .main-menu a:hover{
     color: #fd8300;
@@ -612,17 +677,17 @@ iframe{
     width: 300px;
     top: 50px;
     right: 10%;
-  }
-  .block{
+}
+.block{
     padding: 10px 20px;
     background-color:orangered;
     border-radius: 5px;
-  }
-  #checkbox{
+}
+#checkbox{
     visibility: hidden;
     position: absolute;
-  }
-  #checkbox+label{
+}
+#checkbox+label{
     position: absolute;
     top: 80px;
     left: 275px;
@@ -630,7 +695,7 @@ iframe{
     height: 15px;
     background-color: orange;
     cursor: pointer;
-  }
+}
   #checkbox+label:before,
   #checkbox+label:after{
     content: "";
@@ -665,68 +730,63 @@ iframe{
   #checkbox:checked~.block{
     display: none;
   }
-  @media screen and (max-width: 720px){
-    .header{
-      flex-direction: column;
-      text-align: center;
-      align-items: flex-s tart;
-    }
-    .main-menu{
+    .burger{
         position: absolute;
-        display: none;
-        width: 210px;
-        z-index: 1;
+        visibility: hidden;
+        width: 30px;
+        height: 30px;
+        left: 10px;
+        top: -7px;
     }
-    .main-menu .a {
-        font: bold 15px Arial;
-        color: #2a3644;
-    }
-    .burger ul{
-        position: relative;
-        display: flex;
-        justify-content: center;
-        width: 50px;
-        height: 50px;
-        overflow: hidden;
-        background-color: grey;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: all .5s ease;
-    }
-    .burger ul{
-        transform: translateX(50px);
-    }
-    .burger{
-        transform: translateX(-50px);
-    }
-    .burger{
-        height: 25px;
-    }
-    .burger,
-    .burger,
-    .burger{
+    .checkbox+label::before {
         content: "";
         position: absolute;
-        height: 5px;
-        background-color: #fff;
-        border-radius: 3px;
-        transition: all .5s cubic-bezier(.19,-0.62,.78,1.53);
     }
-    .main-menu span{
-        width: 80%;
-        top: 13px;
-        transition-delay: .5s;
+ 
+    @media screen and (max-width:720px) {
+        .menu-box {
+            display: none;
+            visibility: hidden;
+        }
+        .burger {
+            display: block;
+        }
+        .burger-visible {
+            visibility: visible;
+        }
+        .top-line .menu-box {
+            padding-top: 40px;
+        }
+        .main-menu li {
+            display: block;
+        }
+        .main .wrapper {
+            flex-direction: column-reverse;
+        }
+        .main .colum {
+            width: 100%;
+        } 
+        .main .row {
+            margin: 0;
+            justify-content: center;
+        }
+        .aside .colum,
+        .project .colum {
+            margin: 0;
+        }
+        .menu{
+            float: left;
+        }
+        .project {
+            text-align: center;
+        }
+        .footer-topline {
+            text-align: center;
+        }
+        .info ul, .company ul {
+            padding: 0 0 20px 0;
+        }
     }
-    .main-menu span:before{
-        width: 100%;
-        top: 10px;
-    }
-    .main-menu span:after{
-        width: 100%;
-        top: 20px;
-        transition-delay: .25s;
-    }
-}
   @media screen and (max-width: 370px){
     .logo{
       flex-direction: column;
