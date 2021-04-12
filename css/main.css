@@ -97,12 +97,12 @@ sup{
 }
 .burger-visible {
     visibility: hidden;
+    position: absolute;
     display: block;
     width: 30px;
     height: 5px;
     background-color: #fff;
     border-radius: 5px;
-    position: absolute;
 }
 .burger-visible:first-child {
     top: 0;
